@@ -1,8 +1,8 @@
-name: "BMS Pace"
+name: "BMS Pace - Development"
 description: "Pace BMS Interface"
-version: "2.2.0"
-slug: "bms_pace"
-url: "https://github.com/Tertiush/bmspace/pace-bms"
+version: "2.3dev"
+slug: "bms_pace_dev"
+url: "https://github.com/Tertiush/bmspace/pace-bms-dev"
 init: false
 arch:
   - aarch64
@@ -28,6 +28,9 @@ options:
   bms_serial: "/dev/ttyUSB0"
   scan_interval: 5
   debug_output: 0
+  force_pack_offset: 0
+  zero_pad_number_cells: 0
+  zero_pad_number_packs: 0
 schema:
   mqtt_host: str
   mqtt_port: int
@@ -42,3 +45,6 @@ schema:
   bms_serial: str
   scan_interval: int
   debug_output: int
+  force_pack_offset: "int?"
+  zero_pad_number_cells: "int?"
+  zero_pad_number_packs: "int?"
