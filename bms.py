@@ -204,13 +204,13 @@ def ha_discovery():
             disc_payload['unique_id'] = "bmspace_" + bms_sn + "_pack_" + str(p).zfill(config['zero_pad_number_packs']) + "_t_mos"
             disc_payload['state_topic'] = config['mqtt_base_topic'] + "/pack_" + str(p).zfill(config['zero_pad_number_packs']) + "/t_mos"
             disc_payload['unit_of_measurement'] = "°C"
-            client.publish(config['mqtt_ha_discovery_topic']+"/sensor/BMS-" + bms_sn + "/" + disc_payload['name'] + "/config",json.dumps(disc_payload),qos=0, retain=True)
+            client.publish(config['mqtt_ha_discovery_topic']+"/sensor/BMS-" + bms_sn + "/" + disc_payload['name'].replace(' ', '_') + "/config",json.dumps(disc_payload),qos=0, retain=True)
 
             disc_payload['name'] = "Pack " + str(p).zfill(config['zero_pad_number_packs']) + " Environmental_Temp"
             disc_payload['unique_id'] = "bmspace_" + bms_sn + "_pack_" + str(p).zfill(config['zero_pad_number_packs']) + "_t_env"
             disc_payload['state_topic'] = config['mqtt_base_topic'] + "/pack_" + str(p).zfill(config['zero_pad_number_packs']) + "/t_env"
             disc_payload['unit_of_measurement'] = "°C"
-            client.publish(config['mqtt_ha_discovery_topic']+"/sensor/BMS-" + bms_sn + "/" + disc_payload['name'] + "/config",json.dumps(disc_payload),qos=0, retain=True)
+            client.publish(config['mqtt_ha_discovery_topic']+"/sensor/BMS-" + bms_sn + "/" + disc_payload['name'].replace(' ', '_') + "/config",json.dumps(disc_payload),qos=0, retain=True)
 
             disc_payload['name'] = "Pack " + str(p).zfill(config['zero_pad_number_packs']) + " Current"
             disc_payload['unique_id'] = "bmspace_" + bms_sn + "_pack_" + str(p).zfill(config['zero_pad_number_packs']) + "_i_pack"
